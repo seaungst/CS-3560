@@ -3,18 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/AllOrderView.fxml</file>
-            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/ConfirmOrderController.java</file>
-            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/ManageAccount.fxml</file>
-            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/WelcomeController.java</file>
-            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/Menu.fxml</file>
             <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/AllOrderViewController.java</file>
             <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/LoginController.java</file>
-            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/CreateAccountController.java</file>
-            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/MenuController.java</file>
-            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/ConfirmOrder.fxml</file>
+            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/ConnectionClass.java</file>
+            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/ManageAccount.fxml</file>
             <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/ManageAccountController.java</file>
-            <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/CreateAccount.fxml</file>
             <file>file:/E:/Workspace/project3560/OrderDemo/src/orderdemo/Login.fxml</file>
         </group>
     </open-files>
