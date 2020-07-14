@@ -1,0 +1,23 @@
+.button{
+    -fx-background-color:#9D0400;
+    -fx-background-radius:0;
+    -fx-text-fill:#FFAE4D;
+    
+    -fx-border-color:#FFAE4D;
+    -fx-border-width:3;
+    
+    -fx-font-family:sathu;
+    -fx-font-size:24;
+}
+.button:hover{
+    -fx-background-color:#FFAE4D;
+    -fx-background-radius:0;
+    -fx-text-fill:#9D0400;
+    
+    -fx-border-color:#9D0400;
+    -fx-border-widtht:3;
+    
+    -fx-font-family:sathu;
+    -fx-font-size:24;
+}
+
