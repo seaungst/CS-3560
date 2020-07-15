@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orderdemo.WelcomeController">
    <children>
-      <ImageView fitHeight="541.0" fitWidth="800.0" layoutY="146.0" opacity="0.44">
+      <ImageView fitHeight="541.0" fitWidth="800.0" layoutY="146.0" opacity="0.3">
          <image>
             <Image url="@assets/Img/burger.jpg" />
          </image>
