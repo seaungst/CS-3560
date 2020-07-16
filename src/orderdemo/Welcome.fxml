@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orderdemo.WelcomeController">
    <children>
-      <ImageView fitHeight="541.0" fitWidth="800.0" layoutY="146.0" opacity="0.3">
+      <ImageView fitHeight="541.0" fitWidth="800.0" layoutY="87.0" opacity="0.3">
          <image>
             <Image url="@assets/Img/burger.jpg" />
          </image>
@@ -21,12 +20,13 @@
             <Font name="Sathu" size="61.0" />
          </font>
       </Text>
-      <Button layoutX="342.0" layoutY="467.0" mnemonicParsing="false" onAction="#changeCreateAccount" prefHeight="56.0" prefWidth="116.0" stylesheets="@styleSheet.css" text="Create" textFill="#ffae4d">
+      <Button fx:id="closeButton" cancelButton="true" layoutX="342.0" layoutY="493.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="56.0" prefWidth="116.0" stylesheets="@styleSheet.css" text="Exit" />
+      <Button layoutX="342.0" layoutY="358.0" mnemonicParsing="false" onAction="#changeCreateAccount" prefHeight="56.0" prefWidth="116.0" stylesheets="@styleSheet.css" text="Create" textFill="#ffae4d">
          <font>
             <Font name="Sathu" size="24.0" />
          </font>
       </Button>
-      <Button layoutX="342.0" layoutY="301.0" mnemonicParsing="false" onAction="#changeLogin" prefHeight="54.0" prefWidth="116.0" stylesheets="@styleSheet.css" text="Login" textFill="#ffae4d">
+      <Button layoutX="342.0" layoutY="226.0" mnemonicParsing="false" onAction="#changeLogin" prefHeight="54.0" prefWidth="116.0" stylesheets="@styleSheet.css" text="Login" textFill="#ffae4d">
          <font>
             <Font name="Sathu" size="24.0" />
          </font>

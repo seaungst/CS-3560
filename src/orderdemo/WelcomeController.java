@@ -12,12 +12,12 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.control.*;
 
 /**
  * FXML Controller class
@@ -25,7 +25,10 @@ import javafx.stage.Stage;
  * @author alexv
  */
 public class WelcomeController implements Initializable {
-
+    
+    @FXML
+    public Button closeButton;
+    
     public void changeCreateAccount(ActionEvent event) throws IOException {
 	Parent createAccountParent = FXMLLoader.load(getClass().getResource("CreateAccount.fxml"));
 	Scene createAccountScene = new Scene(createAccountParent);
@@ -44,6 +47,13 @@ public class WelcomeController implements Initializable {
 	stage.setScene(createAccountScene);
 	stage.show();
     }
+    
+    @FXML
+    public void handleCloseButtonAction(ActionEvent event) {
+    Stage stage = (Stage) closeButton.getScene().getWindow();
+    stage.close();
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

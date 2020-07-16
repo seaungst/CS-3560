@@ -24,7 +24,7 @@ public class OrderDemo extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.setTitle("Online Order");
+        stage.setTitle("Out-N-In Online Order System");
         stage.show();
     }
 
