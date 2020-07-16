@@ -7,6 +7,11 @@ package orderdemo;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -22,7 +28,19 @@ import javafx.stage.Stage;
  * @author alexv
  */
 public class CreateAccountController implements Initializable {
-
+    public TextField fname;
+    public TextField lname;
+    public TextField address;
+    public TextField phone;
+    public void submit(ActionEvent actionEvent) throws SQLException,IOException {
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+        String sql = "INSERT INTO CUSTOMER VALUES('"+fname.getText()+"','"+lname.getText()+"','" + address.getText() + "','" + phone.getText() + "')";
+        System.out.println(sql);
+        Statement statement=connection.createStatement();
+        statement.executeUpdate(sql);
+        changeWelcome(actionEvent);
+    }
     public void changeWelcome(ActionEvent event) throws IOException {
 	Parent createAccountParent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
 	Scene createAccountScene = new Scene(createAccountParent);
