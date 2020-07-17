@@ -35,7 +35,7 @@ public class CreateAccountController implements Initializable {
     public void submit(ActionEvent actionEvent) throws SQLException,IOException {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
-        String sql = "INSERT INTO customers VALUES('',"+fname.getText()+"','"+lname.getText()+"','" + address.getText() + "','" + phone.getText() + "')";
+        String sql = "INSERT INTO customers(fname,lname,address,phone) VALUES('"+fname.getText()+"','"+lname.getText()+"','" + address.getText() + "','" + phone.getText() + "')";
         System.out.println(sql);
         Statement statement=connection.createStatement();
         statement.executeUpdate(sql);
