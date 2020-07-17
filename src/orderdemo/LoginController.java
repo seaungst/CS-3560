@@ -35,7 +35,7 @@ public class LoginController implements Initializable {
         Connection connection = connectionClass.getConnection();
         try {
             Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM customer WHERE phone = '" + loginPhone.getText() + "';";
+            String sql = "SELECT * FROM customers WHERE phone = '" + loginPhone.getText() + "';";
             System.out.println(sql);
             ResultSet resultSet = statement.executeQuery(sql);
             if (resultSet.next()) {
