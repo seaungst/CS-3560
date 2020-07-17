@@ -33,13 +33,13 @@
             <Image url="@assets/Img/icon.png" />
          </image>
       </ImageView>
-   <TableView layoutX="20.0" layoutY="158.0" prefHeight="453.0" prefWidth="381.0" stylesheets="@styleSheet.css">
+   <TableView fx:id="menu" layoutX="20.0" layoutY="158.0" prefHeight="453.0" prefWidth="381.0" stylesheets="@styleSheet.css">
      <columns>
-       <TableColumn prefWidth="278.0" text="Item" />
-       <TableColumn prefWidth="101.0" text="Price" />
+       <TableColumn fx:id="item" prefWidth="278.0" text="Item" />
+       <TableColumn fx:id="price" prefWidth="101.0" text="Price" />
      </columns>
    </TableView>
-   <TableView layoutX="416.0" layoutY="235.0" prefHeight="308.0" prefWidth="364.0" stylesheets="@styleSheet.css">
+   <TableView fx:id="cart" layoutX="416.0" layoutY="235.0" prefHeight="308.0" prefWidth="364.0" stylesheets="@styleSheet.css">
      <columns>
        <TableColumn prefWidth="261.485107421875" text="Item" />
        <TableColumn prefWidth="101.514892578125" text="Price" />
