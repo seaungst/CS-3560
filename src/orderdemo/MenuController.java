@@ -22,6 +22,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -35,7 +36,8 @@ public class MenuController implements Initializable {
     public TableColumn<ModelTable, String> cprice;
     public TableColumn<ModelTable, String> item;
     public TableColumn<ModelTable, String> price;
-    public int num;
+    public Label sstotal,stax,stotal;
+    public double subtotal;
     public ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
     public ObservableList<ModelTable> oblist1 = FXCollections.observableArrayList();
     public void changeAllOrderView(ActionEvent event) throws IOException {
@@ -54,7 +56,7 @@ public class MenuController implements Initializable {
         selectedItem = menu.getSelectionModel().getSelectedItems();
         selectedItem.forEach(oblist1::add);
         cart.setItems(oblist1);
-        
+        cost();
     }
     public void Del(ActionEvent actionEvent){
         citem.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -63,9 +65,16 @@ public class MenuController implements Initializable {
         selectedItem = cart.getSelectionModel().getSelectedItems();
         selectedItem.forEach(oblist1::remove);
         cart.setItems(oblist1);
+        cost();
     }
-    public void checkout(){
-//        oblist1.forEach(s);
+    public void cost(){
+        oblist1.forEach(item -> {
+            subtotal += item.getUnit_price();
+        });
+        sstotal.setText(String.format("$%.2f",subtotal));
+        stax.setText(String.format("$%.2f",subtotal*2.5/100));
+        stotal.setText(String.format("$%.2f",subtotal + subtotal * 2.5/100));
+        subtotal = 0;
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -75,7 +84,7 @@ public class MenuController implements Initializable {
             Connection connection = connectionClass.getConnection();
             ResultSet result = connection.createStatement().executeQuery("SELECT * FROM foods");
             while(result.next()){
-                oblist.add(new ModelTable(result.getString(2),result.getString(3)));
+                oblist.add(new ModelTable(result.getString(2),result.getDouble(3)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);

@@ -10,7 +10,8 @@ package orderdemo;
  * @author alexv
  */
 public class ModelTable {
-    String name,unit_price;
+    String name;
+    double unit_price;
 
     public String getName() {
         return name;
@@ -20,16 +21,17 @@ public class ModelTable {
         this.name = name;
     }
 
-    public String getUnit_price() {
+    public double getUnit_price() {
         return unit_price;
     }
 
-    public void setUnit_price(String unit_price) {
+    public void setUnit_price(double unit_price) {
         this.unit_price = unit_price;
     }
 
-    public ModelTable(String name, String unit_price) {
+    public ModelTable(String name, double unit_price) {
         this.name = name;
         this.unit_price = unit_price;
     }
+   
 }
