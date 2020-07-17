@@ -40,10 +40,15 @@ public class MenuController implements Initializable {
     public double subtotal;
     public ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
     public ObservableList<ModelTable> oblist1 = FXCollections.observableArrayList();
-    public void changeAllOrderView(ActionEvent event) throws IOException {
-	Parent createAccountParent = FXMLLoader.load(getClass().getResource("AllOrderView.fxml"));
+    public void changeConfirmOrder(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("ConfirmOrder.fxml"));
+        Parent createAccountParent = loader.load();
+//	Parent createAccountParent = FXMLLoader.load(getClass().getResource("ConfirmOrder.fxml"));
 	Scene createAccountScene = new Scene(createAccountParent);
-
+        
+//        ConfirmOrderController controller = loader.getController();
+//        controller.init(oblist1);
 	// This line gets the Stage information
 	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 	stage.setScene(createAccountScene);

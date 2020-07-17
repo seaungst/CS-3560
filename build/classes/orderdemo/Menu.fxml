@@ -81,7 +81,7 @@
          <Font name="Sathu" size="18.0" />
       </font>
    </Text>
-   <Button layoutX="637.0" layoutY="555.0" mnemonicParsing="false" onAction="#changeAllOrderView" prefHeight="57.0" prefWidth="145.0" stylesheets="@styleSheet.css" text="Checkout">
+   <Button layoutX="637.0" layoutY="555.0" mnemonicParsing="false" onAction="#changeConfirmOrder" prefHeight="57.0" prefWidth="145.0" stylesheets="@styleSheet.css" text="Checkout">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
