@@ -27,11 +27,17 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+
 public class MenuController implements Initializable {
     public TableView<ModelTable> menu;
+    public TableView<ModelTable> cart;
+    public TableColumn<ModelTable, String> citem;
+    public TableColumn<ModelTable, String> cprice;
     public TableColumn<ModelTable, String> item;
     public TableColumn<ModelTable, String> price;
+    public int num;
     public ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
+    public ObservableList<ModelTable> oblist1 = FXCollections.observableArrayList();
     public void changeAllOrderView(ActionEvent event) throws IOException {
 	Parent createAccountParent = FXMLLoader.load(getClass().getResource("AllOrderView.fxml"));
 	Scene createAccountScene = new Scene(createAccountParent);
@@ -41,7 +47,26 @@ public class MenuController implements Initializable {
 	stage.setScene(createAccountScene);
 	stage.show();
     }
-    
+    public void Add(ActionEvent actionEvent){
+        citem.setCellValueFactory(new PropertyValueFactory<>("name"));
+        cprice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
+        ObservableList<ModelTable> selectedItem;
+        selectedItem = menu.getSelectionModel().getSelectedItems();
+        selectedItem.forEach(oblist1::add);
+        cart.setItems(oblist1);
+        
+    }
+    public void Del(ActionEvent actionEvent){
+        citem.setCellValueFactory(new PropertyValueFactory<>("name"));
+        cprice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
+        ObservableList<ModelTable> selectedItem;
+        selectedItem = cart.getSelectionModel().getSelectedItems();
+        selectedItem.forEach(oblist1::remove);
+        cart.setItems(oblist1);
+    }
+    public void checkout(){
+//        oblist1.forEach(s);
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
