@@ -27,13 +27,30 @@
             <Image url="@assets/Img/icon.png" />
          </image>
       </ImageView>
-      <Button layoutX="321.0" layoutY="326.0" mnemonicParsing="false" onAction="#changeAllOrderView" prefHeight="56.0" prefWidth="187.0" stylesheets="@styleSheet.css" text="View Order" />
-      <Button layoutX="320.0" layoutY="567.0" mnemonicParsing="false" onAction="#changeWelcome" prefHeight="56.0" prefWidth="185.0" stylesheets="@styleSheet.css" text="Sign Out" />
-      <Button layoutX="320.0" layoutY="198.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="56.0" prefWidth="184.0" stylesheets="@styleSheet.css" text="Order" />
-      <Button layoutX="321.0" layoutY="450.0" mnemonicParsing="false" onAction="#changeEditAccount" prefHeight="56.0" prefWidth="185.0" stylesheets="@styleSheet.css" text="Edit Account" />
-      <Label fx:id="fname" layoutX="46.0" layoutY="210.0" text="first name" />
-      <Label fx:id="lname" layoutX="46.0" layoutY="261.0" text="last name" />
-      <Label fx:id="address" layoutX="46.0" layoutY="309.0" text="address" />
-      <Label fx:id="phone" layoutX="46.0" layoutY="346.0" text="phone" />
+      <Button layoutX="345.0" layoutY="330.0" mnemonicParsing="false" onAction="#changeAllOrderView" prefHeight="56.0" prefWidth="187.0" stylesheets="@styleSheet.css" text="View Order" />
+      <Button layoutX="346.0" layoutY="568.0" mnemonicParsing="false" onAction="#changeWelcome" prefHeight="56.0" prefWidth="185.0" stylesheets="@styleSheet.css" text="Sign Out" />
+      <Button layoutX="345.0" layoutY="195.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="56.0" prefWidth="184.0" stylesheets="@styleSheet.css" text="Order" />
+      <Button layoutX="346.0" layoutY="448.0" mnemonicParsing="false" onAction="#changeEditAccount" prefHeight="56.0" prefWidth="185.0" stylesheets="@styleSheet.css" text="Edit Account" />
+      <Label fx:id="fname" layoutX="36.0" layoutY="317.0" text="First Name" textFill="#9d0400">
+         <font>
+            <Font name="Sathu" size="18.0" />
+         </font></Label>
+      <Label fx:id="lname" layoutX="36.0" layoutY="386.0" text="Last Name" textFill="#9d0400">
+         <font>
+            <Font name="Sathu" size="18.0" />
+         </font></Label>
+      <Label fx:id="address" layoutX="36.0" layoutY="450.0" text="Address" textFill="#9d0400">
+         <font>
+            <Font name="Sathu" size="18.0" />
+         </font></Label>
+      <Label fx:id="phone" layoutX="36.0" layoutY="520.0" text="Phone Number" textFill="#9d0400">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Text fill="#680100" layoutX="36.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Information" wrappingWidth="184.0">
+         <font>
+            <Font name="Sathu" size="30.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
