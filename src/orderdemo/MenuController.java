@@ -44,11 +44,10 @@ public class MenuController implements Initializable {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("ConfirmOrder.fxml"));
         Parent createAccountParent = loader.load();
-//	Parent createAccountParent = FXMLLoader.load(getClass().getResource("ConfirmOrder.fxml"));
 	Scene createAccountScene = new Scene(createAccountParent);
-        
-//        ConfirmOrderController controller = loader.getController();
-//        controller.init(oblist1);
+
+        ConfirmOrderController controller = loader.getController();
+        controller.init(oblist1);
 	// This line gets the Stage information
 	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 	stage.setScene(createAccountScene);

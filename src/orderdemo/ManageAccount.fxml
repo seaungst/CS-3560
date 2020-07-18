@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -30,5 +31,9 @@
       <Button layoutX="320.0" layoutY="567.0" mnemonicParsing="false" onAction="#changeWelcome" prefHeight="56.0" prefWidth="185.0" stylesheets="@styleSheet.css" text="Sign Out" />
       <Button layoutX="320.0" layoutY="198.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="56.0" prefWidth="184.0" stylesheets="@styleSheet.css" text="Order" />
       <Button layoutX="321.0" layoutY="450.0" mnemonicParsing="false" onAction="#changeEditAccount" prefHeight="56.0" prefWidth="185.0" stylesheets="@styleSheet.css" text="Edit Account" />
+      <Label fx:id="fname" layoutX="46.0" layoutY="210.0" text="first name" />
+      <Label fx:id="lname" layoutX="46.0" layoutY="261.0" text="last name" />
+      <Label fx:id="address" layoutX="46.0" layoutY="309.0" text="address" />
+      <Label fx:id="phone" layoutX="46.0" layoutY="346.0" text="phone" />
    </children>
 </AnchorPane>

@@ -6,6 +6,7 @@
 package orderdemo;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -26,6 +27,7 @@ public class ConfirmOrderController implements Initializable {
     public Label sstotal,stax,stotal;
     public double subtotal;
     public void init(ObservableList<ModelTable> items){
+        System.out.println("hello");
         citem.setCellValueFactory(new PropertyValueFactory<>("name"));
         cprice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
         cart.setItems(items);
