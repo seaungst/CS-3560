@@ -53,6 +53,15 @@ public class ManageAccountController implements Initializable {
 	stage.setScene(createAccountScene);
 	stage.show();
     }
+    public void changeEditAccount(ActionEvent event) throws IOException {
+	Parent createAccountParent = FXMLLoader.load(getClass().getResource("EditAccount.fxml"));
+	Scene createAccountScene = new Scene(createAccountParent);
+
+	// This line gets the Stage information
+	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+	stage.setScene(createAccountScene);
+	stage.show();
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

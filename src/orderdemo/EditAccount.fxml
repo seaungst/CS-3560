@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orderdemo.CreateAccountController">
-   <children>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orderdemo.EditAccountController">
+    <children>
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9d0400" height="146.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
-      <Text fill="#ffae4d" layoutX="226.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create an Account" wrappingWidth="542.0">
+      <Text fill="#ffae4d" layoutX="281.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Account" wrappingWidth="542.0">
          <font>
             <Font name="Sathu" size="61.0" />
          </font>
@@ -80,7 +87,7 @@
             <Image url="@assets/Img/icon.png" />
          </image>
       </ImageView>
-      <Button layoutX="133.0" layoutY="588.0" mnemonicParsing="false" onAction="#submit" prefHeight="56.0" prefWidth="115.0" stylesheets="@styleSheet.css" text="Create" />
-      <Button layoutX="552.0" layoutY="589.0" mnemonicParsing="false" onAction="#changeWelcome" prefHeight="56.0" prefWidth="115.0" stylesheets="@styleSheet.css" text="Back" />
+      <Button layoutX="133.0" layoutY="588.0" mnemonicParsing="false" onAction="#changeManageAccount" prefHeight="56.0" prefWidth="123.0" stylesheets="@styleSheet.css" text="Update" />
+      <Button layoutX="552.0" layoutY="589.0" mnemonicParsing="false" onAction="#changeManageAccount" prefHeight="56.0" prefWidth="115.0" stylesheets="@styleSheet.css" text="Back" />
    </children>
 </AnchorPane>

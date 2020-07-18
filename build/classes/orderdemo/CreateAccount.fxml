@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orderdemo.CreateAccountController">
    <children>
@@ -39,7 +32,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <TextField fx:id="fname" prefWidth="320.0" promptText="John" stylesheets="@styleSheet.css" GridPane.columnIndex="1">
+            <TextField fx:id="fname" prefWidth="320.0" promptText="John" style="-fx-background-color: #fff3e7; -fx-border-color: #FFAE4D;" stylesheets="@styleSheet.css" GridPane.columnIndex="1">
                <padding>
                   <Insets top="10.0" />
                </padding>
@@ -51,7 +44,7 @@
                <font>
                   <Font name="Sathu Bold" size="18.0" />
                </font></Text>
-            <TextField fx:id="lname" prefHeight="28.0" prefWidth="308.0" promptText="Smith" stylesheets="@styleSheet.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="lname" prefHeight="28.0" prefWidth="308.0" promptText="Smith" style="-fx-background-color: #fff3e7#fff3e7; -fx-border-color: #ffae4d;" stylesheets="@styleSheet.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font></TextField>
@@ -59,7 +52,7 @@
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <TextField fx:id="address" prefHeight="27.0" prefWidth="279.0" promptText="1234 Street St. City,ST 56789" stylesheets="@styleSheet.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="address" prefHeight="27.0" prefWidth="279.0" promptText="1234 Street St. City,ST 56789" style="-fx-background-color: #fff3e7#fff3e7; -fx-border-color: #ffae4d;" stylesheets="@styleSheet.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Sathu Bold" size="18.0" />
                </font></TextField>
@@ -67,7 +60,7 @@
                <font>
                   <Font name="Sathu Bold" size="18.0" />
                </font></Text>
-            <TextField fx:id="phone" prefHeight="28.0" prefWidth="298.0" promptText="1234567890" stylesheets="@styleSheet.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="phone" prefHeight="28.0" prefWidth="298.0" promptText="1234567890" style="-fx-background-color: #fff3e7#fff3e7; -fx-border-color: #ffae4d;" stylesheets="@styleSheet.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Sathu Bold" size="18.0" />
                </font></TextField>
