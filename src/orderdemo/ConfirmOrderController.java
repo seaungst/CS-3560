@@ -35,8 +35,8 @@ public class ConfirmOrderController implements Initializable {
             subtotal += item.getUnit_price();
         });
         sstotal.setText(String.format("$%.2f",subtotal));
-        stax.setText(String.format("$%.2f",subtotal*2.5/100));
-        stotal.setText(String.format("$%.2f",subtotal + subtotal * 2.5/100));
+        stax.setText(String.format("$%.2f",subtotal*7.5/100));
+        stotal.setText(String.format("$%.2f",subtotal + subtotal * 7.5/100));
         address.setText(temp.getAddress());
         subtotal = 0;
     };
