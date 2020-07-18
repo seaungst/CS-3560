@@ -26,18 +26,13 @@
                   <Font name="Sathu" size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="loginPhone" promptText="1234567890" stylesheets="@styleSheet.css">
+            <TextField fx:id="loginPhone" promptText="1234567890" style="-fx-background-color: #fff3e7; -fx-border-color: #ffae4d;" stylesheets="@styleSheet.css">
                <font>
                   <Font name="Sathu" size="18.0" />
                </font></TextField>
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </HBox>
-      <HBox layoutX="310.0" layoutY="263.0" spacing="20.0">
-         <padding>
-            <Insets top="5.0" />
          </padding>
       </HBox>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9d0400" height="146.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />

@@ -30,6 +30,7 @@ import javafx.stage.Stage;
 public class LoginController implements Initializable {
     public TextField loginPhone;   
     public Label isConnected;
+    public UserInfo user;
     public void login(ActionEvent actionEvent) throws IOException {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
@@ -37,9 +38,10 @@ public class LoginController implements Initializable {
             Statement statement = connection.createStatement();
             String sql = "SELECT * FROM customers WHERE phone = '" + loginPhone.getText() + "';";
             System.out.println(sql);
-            ResultSet resultSet = statement.executeQuery(sql);
-            if (resultSet.next()) {
+            ResultSet result = statement.executeQuery(sql);
+            if (result.next()) {
                 isConnected.setText("Connected");
+                user = new UserInfo(result.getInt(1),result.getString(2),result.getString(3),result.getString(4),result.getString(5));
                 changeManageAccount(actionEvent);
             } else {
                 isConnected.setText("Not Connected");
@@ -59,8 +61,14 @@ public class LoginController implements Initializable {
 	stage.show();
     }
     public void changeManageAccount(ActionEvent event) throws IOException {
-	Parent createAccountParent = FXMLLoader.load(getClass().getResource("ManageAccount.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("ManageAccount.fxml"));
+        Parent createAccountParent = loader.load();
 	Scene createAccountScene = new Scene(createAccountParent);
+
+        ManageAccountController controller = loader.getController();
+        controller.init(user);
+
 
 	// This line gets the Stage information
 	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

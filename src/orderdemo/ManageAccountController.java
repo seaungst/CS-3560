@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -22,6 +23,14 @@ import javafx.stage.Stage;
  * @author alexv
  */
 public class ManageAccountController implements Initializable {
+    public Label fname,lname,address,phone;
+    public void init(UserInfo user){
+        System.out.println(user.getAddress());
+        fname.setText(user.getFname());
+        lname.setText(user.getLname());
+        address.setText(user.getAddress());
+        phone.setText(user.getPhone());
+    }
 
     /**
      * Initializes the controller class.
@@ -46,6 +55,15 @@ public class ManageAccountController implements Initializable {
     }
     public void changeAllOrderView(ActionEvent event) throws IOException {
 	Parent createAccountParent = FXMLLoader.load(getClass().getResource("AllOrderView.fxml"));
+	Scene createAccountScene = new Scene(createAccountParent);
+
+	// This line gets the Stage information
+	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+	stage.setScene(createAccountScene);
+	stage.show();
+    }
+    public void changeEditAccount(ActionEvent event) throws IOException {
+	Parent createAccountParent = FXMLLoader.load(getClass().getResource("EditAccounta.fxml"));
 	Scene createAccountScene = new Scene(createAccountParent);
 
 	// This line gets the Stage information

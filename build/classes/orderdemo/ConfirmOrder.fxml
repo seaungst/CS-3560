@@ -1,11 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orderdemo.ConfirmOrderController">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orderdemo.ConfirmOrderController">
+    <ImageView fitHeight="541.0" fitWidth="800.0" layoutY="87.0" opacity="0.3">
+         <image>
+            <Image url="@assets/Img/burger.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9d0400" height="146.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
+      <Text fill="#ffae4d" layoutX="254.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout" wrappingWidth="317.13671875">
+         <font>
+            <Font name="Sathu" size="61.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="20.0" layoutY="-27.0">
+         <image>
+            <Image url="@assets/Img/icon.png" />
+         </image>
+      </ImageView>
+   <TableView fx:id="cart" layoutX="28.0" layoutY="189.0" prefHeight="235.0" prefWidth="364.0" stylesheets="@styleSheet.css">
+     <columns>
+       <TableColumn fx:id="cprice" prefWidth="101.514892578125" text="Price" />
+       <TableColumn fx:id="citem" prefWidth="261.485107421875" text="Item" />
+     </columns>
+   </TableView>
+   <Label fx:id="stax" layoutX="600.0" layoutY="269.0" text="\$00.00" textFill="#680100">
+      <font>
+         <Font name="Sathu" size="36.0" />
+      </font>
+   </Label>
+   <Text fill="#9d0400" layoutX="431.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal:">
+      <font>
+         <Font name="Sathu" size="36.0" />
+      </font>
+   </Text>
+   <Text fill="#9d0400" layoutX="431.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tax:">
+      <font>
+         <Font name="Sathu" size="36.0" />
+      </font>
+   </Text>
+   <Label fx:id="sstotal" layoutX="600.0" layoutY="207.0" text="\$00.00" textFill="#680100">
+      <font>
+         <Font name="Sathu" size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="stotal" layoutX="600.0" layoutY="332.0" text="\$00.00" textFill="#680100">
+      <font>
+         <Font name="Sathu" size="36.0" />
+      </font>
+   </Label>
+   <Text fill="#9d0400" layoutX="431.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total:">
+      <font>
+         <Font name="Sathu" size="36.0" />
+      </font>
+   </Text>
+   <Button layoutX="431.0" layoutY="528.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="200.0" stylesheets="@styleSheet.css" text="Place Order">
+      <font>
+         <Font name="Sathu" size="18.0" />
+      </font>
+   </Button>
+   <Text fill="#9d0400" layoutX="428.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drivers accept payment upon delivery." wrappingWidth="364.0">
+      <font>
+         <Font name="Sathu" size="20.0" />
+      </font>
+   </Text>
+   <Text fill="#9d0400" layoutX="427.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thank you for dining with Out-N-In!" wrappingWidth="355.13671875">
+      <font>
+         <Font name="Sathu" size="20.0" />
+      </font>
+   </Text>
+   <Text fill="#9d0400" layoutX="28.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shipping Address">
+      <font>
+         <Font name="Sathu" size="24.0" />
+      </font>
+   </Text>
+   <Label layoutX="30.0" layoutY="482.0" text="+add" textFill="#680100">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Text fill="#9d0400" layoutX="30.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Method">
+      <font>
+         <Font name="Sathu" size="24.0" />
+      </font>
+   </Text>
+   <RadioButton fx:id="radio1" layoutX="30.0" layoutY="556.0" mnemonicParsing="false" stylesheets="@styleSheet.css" text="Card" textFill="#680100" toggleGroup="$group1">
+      <font>
+         <Font name="Sathu" size="18.0" />
+      </font>
+      <toggleGroup>
+         <ToggleGroup fx:id="group1" />
+      </toggleGroup>
+   </RadioButton>
+   <RadioButton fx:id="radio2" layoutX="142.0" layoutY="556.0" mnemonicParsing="false" stylesheets="@styleSheet.css" text="Cash" textFill="#680100" toggleGroup="$group1">
+      <font>
+         <Font name="Sathu" size="18.0" />
+      </font>
+   </RadioButton>
 </AnchorPane>

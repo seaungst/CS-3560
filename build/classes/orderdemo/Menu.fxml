@@ -18,12 +18,12 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9d0400" height="146.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
-      <Text fill="#ffae4d" layoutX="251.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu" wrappingWidth="165.13671875">
+      <Text fill="#ffae4d" layoutX="235.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu" wrappingWidth="165.13671875">
          <font>
             <Font name="Sathu" size="61.0" />
          </font>
       </Text>
-   <Text fill="#ffae4d" layoutX="539.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart" wrappingWidth="165.13671875">
+   <Text fill="#ffae4d" layoutX="539.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart" wrappingWidth="165.13671875">
       <font>
          <Font name="Sathu" size="61.0" />
       </font>
@@ -39,7 +39,7 @@
        <TableColumn fx:id="price" prefWidth="101.0" text="Price" />
      </columns>
    </TableView>
-   <TableView fx:id="cart" layoutX="416.0" layoutY="235.0" prefHeight="308.0" prefWidth="364.0" stylesheets="@styleSheet.css">
+   <TableView fx:id="cart" layoutX="416.0" layoutY="231.0" prefHeight="308.0" prefWidth="364.0" stylesheets="@styleSheet.css">
      <columns>
        <TableColumn fx:id="citem" prefWidth="261.485107421875" text="Item" />
        <TableColumn fx:id="cprice" prefWidth="101.514892578125" text="Price" />
@@ -50,38 +50,38 @@
          <Font name="Sathu" size="18.0" />
       </font>
    </Button>
-   <Button layoutX="652.0" layoutY="157.0" mnemonicParsing="false" onAction="#Del" prefHeight="56.0" prefWidth="133.0" stylesheets="@styleSheet.css" text="Remove" />
-   <Label fx:id="stax" layoutX="452.0" layoutY="584.0" text="\$00.00" textFill="#680100">
+   <Button layoutX="647.0" layoutY="157.0" mnemonicParsing="false" onAction="#Del" prefHeight="56.0" prefWidth="133.0" stylesheets="@styleSheet.css" text="Remove" />
+   <Label fx:id="stax" layoutX="506.0" layoutY="564.0" text="\$00.00" textFill="#680100">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
    </Label>
-   <Text fill="#9d0400" layoutX="413.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal:">
+   <Text fill="#9d0400" layoutX="416.0" layoutY="560.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal:">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
    </Text>
-   <Text fill="#9d0400" layoutX="413.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tax:">
+   <Text fill="#9d0400" layoutX="416.0" layoutY="582.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tax:">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
    </Text>
-   <Label fx:id="sstotal" layoutX="494.0" layoutY="558.0" text="\$00.00" textFill="#680100">
+   <Label fx:id="sstotal" layoutX="506.0" layoutY="542.0" text="\$00.00" textFill="#680100">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
    </Label>
-   <Label fx:id="stotal" layoutX="581.0" layoutY="584.0" text="\$00.00" textFill="#680100">
+   <Label fx:id="stotal" layoutX="506.0" layoutY="588.0" text="\$00.00" textFill="#680100">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
    </Label>
-   <Text fill="#9d0400" layoutX="581.0" layoutY="578.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total:">
+   <Text fill="#9d0400" layoutX="416.0" layoutY="606.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total:">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
    </Text>
-   <Button layoutX="637.0" layoutY="555.0" mnemonicParsing="false" onAction="#changeAllOrderView" prefHeight="57.0" prefWidth="145.0" stylesheets="@styleSheet.css" text="Checkout">
+   <Button layoutX="629.0" layoutY="554.0" mnemonicParsing="false" onAction="#changeConfirmOrder" prefHeight="57.0" prefWidth="150.0" stylesheets="@styleSheet.css" text="Checkout">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
