@@ -87,7 +87,7 @@
             <Image url="@assets/Img/icon.png" />
          </image>
       </ImageView>
-      <Button layoutX="133.0" layoutY="588.0" mnemonicParsing="false" onAction="#changeManageAccount" prefHeight="56.0" prefWidth="123.0" stylesheets="@styleSheet.css" text="Update" />
+      <Button layoutX="133.0" layoutY="588.0" mnemonicParsing="false" onAction="#update" prefHeight="56.0" prefWidth="123.0" stylesheets="@styleSheet.css" text="Update" />
       <Button layoutX="552.0" layoutY="589.0" mnemonicParsing="false" onAction="#changeManageAccount" prefHeight="56.0" prefWidth="115.0" stylesheets="@styleSheet.css" text="Back" />
    </children>
 </AnchorPane>

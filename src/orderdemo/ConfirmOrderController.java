@@ -24,9 +24,9 @@ public class ConfirmOrderController implements Initializable {
     public TableView<ModelTable> cart;
     public TableColumn<ModelTable, String> citem;
     public TableColumn<ModelTable, String> cprice;
-    public Label sstotal,stax,stotal;
+    public Label sstotal,stax,stotal,address;
     public double subtotal;
-    public void init(ObservableList<ModelTable> items){
+    public void init(ObservableList<ModelTable> items, UserInfo temp){
         System.out.println("hello");
         citem.setCellValueFactory(new PropertyValueFactory<>("name"));
         cprice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
@@ -37,6 +37,7 @@ public class ConfirmOrderController implements Initializable {
         sstotal.setText(String.format("$%.2f",subtotal));
         stax.setText(String.format("$%.2f",subtotal*2.5/100));
         stotal.setText(String.format("$%.2f",subtotal + subtotal * 2.5/100));
+        address.setText(temp.getAddress());
         subtotal = 0;
     };
     @Override

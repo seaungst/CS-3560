@@ -24,12 +24,13 @@ import javafx.stage.Stage;
  */
 public class ManageAccountController implements Initializable {
     public Label fname,lname,address,phone;
-    public void init(UserInfo user){
-        System.out.println(user.getAddress());
-        fname.setText(user.getFname());
-        lname.setText(user.getLname());
-        address.setText(user.getAddress());
-        phone.setText(user.getPhone());
+    public UserInfo user;
+    public void init(UserInfo temp){
+        user = temp;
+        fname.setText(temp.getFname());
+        lname.setText(temp.getLname());
+        address.setText(temp.getAddress());
+        phone.setText(temp.getPhone());
     }
 
     /**
@@ -45,9 +46,13 @@ public class ManageAccountController implements Initializable {
 	stage.show();
     }
     public void changeMenu(ActionEvent event) throws IOException {
-	Parent createAccountParent = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Menu.fxml"));
+        Parent createAccountParent = loader.load();
 	Scene createAccountScene = new Scene(createAccountParent);
 
+        MenuController controller = loader.getController();
+        controller.getUser(user);
 	// This line gets the Stage information
 	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 	stage.setScene(createAccountScene);
@@ -63,9 +68,13 @@ public class ManageAccountController implements Initializable {
 	stage.show();
     }
     public void changeEditAccount(ActionEvent event) throws IOException {
-	Parent createAccountParent = FXMLLoader.load(getClass().getResource("EditAccounta.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("EditAccount.fxml"));
+        Parent createAccountParent = loader.load();
 	Scene createAccountScene = new Scene(createAccountParent);
 
+        EditAccountController controller = loader.getController();
+        controller.getUser(user);
 	// This line gets the Stage information
 	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 	stage.setScene(createAccountScene);
