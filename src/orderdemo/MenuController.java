@@ -30,6 +30,7 @@ import javafx.stage.Stage;
 
 
 public class MenuController implements Initializable {
+    UserInfo user;
     public TableView<ModelTable> menu;
     public TableView<ModelTable> cart;
     public TableColumn<ModelTable, String> citem;
@@ -47,7 +48,7 @@ public class MenuController implements Initializable {
 	Scene createAccountScene = new Scene(createAccountParent);
 
         ConfirmOrderController controller = loader.getController();
-        controller.init(oblist1);
+        controller.init(oblist1, user);
 	// This line gets the Stage information
 	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 	stage.setScene(createAccountScene);
@@ -70,6 +71,9 @@ public class MenuController implements Initializable {
         selectedItem.forEach(oblist1::remove);
         cart.setItems(oblist1);
         cost();
+    }
+    public void getUser(UserInfo temp){
+        user = temp;
     }
     public void cost(){
         oblist1.forEach(item -> {
