@@ -21,12 +21,8 @@ import javafx.stage.Stage;
  *
  * @author alexv
  */
-public class AllOrderViewController implements Initializable {
+public class OrderDetailController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
-    
     public void changeManageAccount(ActionEvent event) throws IOException {
 	Parent createAccountParent = FXMLLoader.load(getClass().getResource("ManageAccount.fxml"));
 	Scene createAccountScene = new Scene(createAccountParent);
@@ -36,18 +32,9 @@ public class AllOrderViewController implements Initializable {
 	stage.setScene(createAccountScene);
 	stage.show();
     }
-    public void changeOrderDetail(ActionEvent event) throws IOException {
-	Parent createAccountParent = FXMLLoader.load(getClass().getResource("OrderDetail.fxml"));
-	Scene createAccountScene = new Scene(createAccountParent);
-
-	// This line gets the Stage information
-	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-	stage.setScene(createAccountScene);
-	stage.show();
-    } 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+	@Override
+	public void initialize(URL url, ResourceBundle rb) {
+		// TODO
+	}	
+	
 }
