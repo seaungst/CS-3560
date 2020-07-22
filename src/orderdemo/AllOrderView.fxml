@@ -29,10 +29,11 @@
       </ImageView>
    <TableView layoutX="35.0" layoutY="173.0" prefHeight="345.0" prefWidth="730.0" stylesheets="@styleSheet.css">
      <columns>
-       <TableColumn prefWidth="272.0" text="Order Number" />
-       <TableColumn prefWidth="115.0" text="Date" />
-         <TableColumn prefWidth="101.0" text="Status" />
-         <TableColumn prefWidth="238.0" text="Payment Method" />
+       <TableColumn prefWidth="172.0" text="Order Number" />
+       <TableColumn prefWidth="100.0" text="Date" />
+         <TableColumn prefWidth="103.0" text="Status" />
+         <TableColumn prefWidth="191.0" text="Payment Method" />
+         <TableColumn prefWidth="154.0" text="Paid Amount" />
      </columns>
    </TableView>
    <Button layoutX="638.0" layoutY="554.0" mnemonicParsing="false" onAction="#changeManageAccount" prefHeight="56.0" prefWidth="127.0" stylesheets="@styleSheet.css" text="Back">
