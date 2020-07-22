@@ -27,7 +27,7 @@
             <Image url="@assets/Img/icon.png" />
          </image>
       </ImageView>
-      <Button layoutX="345.0" layoutY="330.0" mnemonicParsing="false" onAction="#changeAllOrderView" prefHeight="56.0" prefWidth="187.0" stylesheets="@styleSheet.css" text="View Order" />
+      <Button layoutX="345.0" layoutY="330.0" mnemonicParsing="false" onAction="#changeAllOrderView" prefHeight="56.0" prefWidth="187.0" stylesheets="@styleSheet.css" text="Your Orders" />
       <Button layoutX="346.0" layoutY="568.0" mnemonicParsing="false" onAction="#changeWelcome" prefHeight="56.0" prefWidth="185.0" stylesheets="@styleSheet.css" text="Sign Out" />
       <Button layoutX="345.0" layoutY="195.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="56.0" prefWidth="184.0" stylesheets="@styleSheet.css" text="Order" />
       <Button layoutX="346.0" layoutY="448.0" mnemonicParsing="false" onAction="#changeEditAccount" prefHeight="56.0" prefWidth="185.0" stylesheets="@styleSheet.css" text="Edit Account" />

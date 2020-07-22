@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -18,7 +17,7 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9d0400" height="146.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
-      <Text fill="#ffae4d" layoutX="254.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Order" wrappingWidth="317.13671875">
+      <Text fill="#ffae4d" layoutX="241.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Orders" wrappingWidth="414.13671875">
          <font>
             <Font name="Sathu" size="61.0" />
          </font>
@@ -30,8 +29,10 @@
       </ImageView>
    <TableView layoutX="35.0" layoutY="173.0" prefHeight="345.0" prefWidth="730.0" stylesheets="@styleSheet.css">
      <columns>
-       <TableColumn prefWidth="261.485107421875" text="Item" />
-       <TableColumn prefWidth="101.514892578125" text="Price" />
+       <TableColumn prefWidth="272.0" text="Order Number" />
+       <TableColumn prefWidth="115.0" text="Date" />
+         <TableColumn prefWidth="101.0" text="Status" />
+         <TableColumn prefWidth="238.0" text="Payment Method" />
      </columns>
    </TableView>
    <Button layoutX="638.0" layoutY="554.0" mnemonicParsing="false" onAction="#changeManageAccount" prefHeight="56.0" prefWidth="127.0" stylesheets="@styleSheet.css" text="Back">
@@ -39,25 +40,9 @@
          <Font name="Sathu" size="18.0" />
       </font>
    </Button>
-   <ProgressBar layoutX="35.0" layoutY="549.0" prefHeight="33.0" prefWidth="560.0" progress="0.0" />
-   <Text fill="#9d0400" layoutX="35.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Progress:">
+   <Button layoutX="296.0" layoutY="554.0" mnemonicParsing="false" onAction="#changeOrderDetail" prefHeight="57.0" prefWidth="171.0" stylesheets="@styleSheet.css" text="Order Detail">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
-   </Text>
-   <Text fill="#9d0400" layoutX="35.0" layoutY="598.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmed">
-      <font>
-         <Font name="Sathu" size="18.0" />
-      </font>
-   </Text>
-   <Text fill="#9d0400" layoutX="506.0" layoutY="598.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivered">
-      <font>
-         <Font name="Sathu" size="18.0" />
-      </font>
-   </Text>
-   <Text fill="#9d0400" layoutX="285.0" layoutY="598.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cooking">
-      <font>
-         <Font name="Sathu" size="18.0" />
-      </font>
-   </Text>
+   </Button>
 </AnchorPane>
