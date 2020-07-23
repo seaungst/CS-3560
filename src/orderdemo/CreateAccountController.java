@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package orderdemo;
-
+import java.util.regex.Pattern;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -32,15 +33,32 @@ public class CreateAccountController implements Initializable {
     public TextField lname;
     public TextField address;
     public TextField phone;
+    public Label input;
     public void submit(ActionEvent actionEvent) throws SQLException,IOException {
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
-        String sql = "INSERT INTO customers(fname,lname,address,phone) "
+	boolean valid = phone(phone.getText());
+	if(valid){
+		ConnectionClass connectionClass = new ConnectionClass();
+		Connection connection = connectionClass.getConnection();
+		String sql = "INSERT INTO customers(fname,lname,address,phone) "
 		+ "VALUES('"+fname.getText()+"','"+lname.getText()+"','" + address.getText() + "','" + phone.getText() + "')";
-        System.out.println(sql);
-        Statement statement=connection.createStatement();
-        statement.executeUpdate(sql);
-        changeWelcome(actionEvent);
+		System.out.println(sql);
+		Statement statement=connection.createStatement();
+		statement.executeUpdate(sql);
+		changeWelcome(actionEvent);
+	}else{
+		System.out.print("input is invalid");
+		input.setVisible(true);
+		input.setText("input is invalid");
+
+	}
+    }
+    public static boolean phone(String phoneNo)
+    {
+        //Check NULL
+        if (phoneNo == null) return false;
+        //validate phone numbers of format "1234567890"
+        if (phoneNo.matches("\\d{10}")) return true;
+        return false;
     }
     public void changeWelcome(ActionEvent event) throws IOException {
 	Parent createAccountParent = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
@@ -51,6 +69,7 @@ public class CreateAccountController implements Initializable {
 	stage.setScene(createAccountScene);
 	stage.show();
     }
+
     public void changeLogin(ActionEvent event) throws IOException {
 	Parent createAccountParent = FXMLLoader.load(getClass().getResource("Login.fxml"));
 	Scene createAccountScene = new Scene(createAccountParent);
@@ -62,7 +81,7 @@ public class CreateAccountController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        input.setVisible(false);
     }    
     
 }

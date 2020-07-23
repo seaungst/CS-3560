@@ -12,26 +12,35 @@ package orderdemo;
 public class ModelTable {
     String name;
     double unit_price;
+    String foodid;
 
-    public String getName() {
-        return name;
-    }
+	public ModelTable(String name, double unit_price, String foodid) {
+		this.name = name;
+		this.unit_price = unit_price;
+		this.foodid = foodid;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public double getUnit_price() {
-        return unit_price;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setUnit_price(double unit_price) {
-        this.unit_price = unit_price;
-    }
+	public double getUnit_price() {
+		return unit_price;
+	}
 
-    public ModelTable(String name, double unit_price) {
-        this.name = name;
-        this.unit_price = unit_price;
-    }
-   
+	public void setUnit_price(double unit_price) {
+		this.unit_price = unit_price;
+	}
+
+	public String getFoodid() {
+		return foodid;
+	}
+
+	public void setFoodid(String foodid) {
+		this.foodid = foodid;
+	}
 }

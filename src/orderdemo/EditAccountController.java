@@ -8,20 +8,16 @@ package orderdemo;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -33,6 +29,7 @@ import javafx.stage.Stage;
 public class EditAccountController implements Initializable {
     public UserInfo user;
     public TextField fname,lname,address,phone;
+    public Label input;
     public void changeManageAccount(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("ManageAccount.fxml"));
@@ -50,26 +47,42 @@ public class EditAccountController implements Initializable {
         user = temp;
 
     }
+    public static boolean phone(String phoneNo)
+    {
+        //Check NULL
+        if (phoneNo == null) return false;
+        //validate phone numbers of format "1234567890"
+        if (phoneNo.matches("\\d{10}")) return true;
+        return false;
+    }
     public void update(ActionEvent actionEvent)throws IOException{
+	boolean valid = phone(phone.getText());
+	if(valid){
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
-        try {
-            Statement statement = connection.createStatement();
-            String sql = "UPDATE customers set fname='"+fname.getText()+"',lname='"+lname.getText()+"',"
-            + "address='"+address.getText()+"',phone='"+phone.getText()+"' WHERE phone='"+user.getPhone()+"'";  
-            statement.executeUpdate(sql);
-            user.setFname(fname.getText());
-            user.setLname(lname.getText());
-            user.setAddress(address.getText());
-            user.setPhone(phone.getText());
-            changeManageAccount(actionEvent);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+		try {
+			Statement statement = connection.createStatement();
+			String sql = "UPDATE customers set fname='"+fname.getText()+"',lname='"+lname.getText()+"',"
+			+ "address='"+address.getText()+"',phone='"+phone.getText()+"' WHERE phone='"+user.getPhone()+"'";  
+			statement.executeUpdate(sql);
+			user.setFname(fname.getText());
+			user.setLname(lname.getText());
+			user.setAddress(address.getText());
+			user.setPhone(phone.getText());
+			changeManageAccount(actionEvent);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}else{
+		System.out.print("input is invalid");
+		input.setVisible(true);
+		input.setText("input is invalid");
+
+	}
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        input.setVisible(false);
     }    
     
 }
