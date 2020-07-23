@@ -61,7 +61,7 @@ public class MenuController implements Initializable {
         selectedItem = menu.getSelectionModel().getSelectedItems();
         selectedItem.forEach(oblist1::add);
         cart.setItems(oblist1);
-        cost();
+	cost();
     }
     public void Del(ActionEvent actionEvent){
         citem.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -107,7 +107,7 @@ public class MenuController implements Initializable {
             Connection connection = connectionClass.getConnection();
             ResultSet result = connection.createStatement().executeQuery("SELECT * FROM foods");
             while(result.next()){
-                oblist.add(new ModelTable(result.getString(2),result.getDouble(3)));
+                oblist.add(new ModelTable(result.getString(2),result.getDouble(3),result.getString(1)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
