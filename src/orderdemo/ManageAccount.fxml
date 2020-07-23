@@ -32,46 +32,67 @@
       <Button layoutX="516.0" layoutY="576.0" mnemonicParsing="false" onAction="#changeWelcome" prefHeight="56.0" prefWidth="185.0" stylesheets="@styleSheet.css" text="Sign Out" />
       <Button layoutX="515.0" layoutY="192.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="56.0" prefWidth="184.0" stylesheets="@styleSheet.css" text="Order" />
       <Button layoutX="516.0" layoutY="448.0" mnemonicParsing="false" onAction="#changeEditAccount" prefHeight="56.0" prefWidth="185.0" stylesheets="@styleSheet.css" text="Edit Account" />
-      <Label fx:id="fname" layoutX="70.0" layoutY="293.0" text="First Name" textFill="#9d0400">
+      <Label fx:id="fname" layoutX="145.0" layoutY="298.0" text="First Name" textFill="#9d0400">
          <font>
             <Font name="Sathu" size="18.0" />
          </font></Label>
-      <Label fx:id="lname" layoutX="70.0" layoutY="386.0" text="Last Name" textFill="#9d0400">
+      <Label fx:id="lname" layoutX="145.0" layoutY="384.0" text="Last Name" textFill="#9d0400">
          <font>
             <Font name="Sathu" size="18.0" />
          </font></Label>
-      <Label fx:id="address" layoutX="70.0" layoutY="476.0" text="Address" textFill="#9d0400">
+      <Label fx:id="address" layoutX="144.0" layoutY="483.0" text="Address" textFill="#9d0400">
          <font>
             <Font name="Sathu" size="18.0" />
          </font></Label>
-      <Label fx:id="phone" layoutX="70.0" layoutY="565.0" text="Phone Number" textFill="#9d0400">
+      <Label fx:id="phone" layoutX="138.0" layoutY="578.0" text="Phone Number" textFill="#9d0400">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Text fill="#680100" layoutX="70.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Information" underline="true" wrappingWidth="312.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9d0400" height="65.0" layoutX="58.0" layoutY="192.0" stroke="#9d0400" strokeType="INSIDE" strokeWidth="3.0" width="325.0" />
+      <Text fill="#fff3e7" layoutX="72.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Information" wrappingWidth="312.0">
          <font>
             <Font name="Sathu" size="30.0" />
          </font>
       </Text>
-      <Text fill="#680100" layoutX="70.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" wrappingWidth="301.0">
+      <Text fill="#680100" layoutX="144.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" wrappingWidth="246.0">
          <font>
             <Font name="Sathu" size="24.0" />
          </font>
       </Text>
-      <Text fill="#680100" layoutX="70.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" wrappingWidth="301.0">
+      <Text fill="#680100" layoutX="144.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" wrappingWidth="246.0">
          <font>
             <Font name="Sathu" size="24.0" />
          </font>
       </Text>
-      <Text fill="#680100" layoutX="70.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" wrappingWidth="301.0">
+      <Text fill="#680100" layoutX="144.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" wrappingWidth="246.0">
          <font>
             <Font name="Sathu" size="24.0" />
          </font>
       </Text>
-      <Text fill="#680100" layoutX="70.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:" wrappingWidth="301.0">
+      <Text fill="#680100" layoutX="138.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:" wrappingWidth="246.0">
          <font>
             <Font name="Sathu" size="24.0" />
          </font>
       </Text>
+      <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="85.0" layoutY="274.0">
+         <image>
+            <Image url="@assets/Img/account_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="51.0" layoutX="81.0" layoutY="452.0">
+         <image>
+            <Image url="@assets/Img/address_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="81.0" layoutY="552.0">
+         <image>
+            <Image url="@assets/Img/phone_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="42.0" layoutX="85.0" layoutY="360.0">
+         <image>
+            <Image url="@assets/Img/account_icon.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

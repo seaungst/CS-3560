@@ -84,6 +84,21 @@ public class MenuController implements Initializable {
         stotal.setText(String.format("$%.2f",subtotal + subtotal * 7.25/100));
         subtotal = 0;
     }
+    public void changeManageAccount(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("ManageAccount.fxml"));
+        Parent createAccountParent = loader.load();
+	Scene createAccountScene = new Scene(createAccountParent);
+
+        ManageAccountController controller = loader.getController();
+        controller.init(user);
+
+
+	// This line gets the Stage information
+	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+	stage.setScene(createAccountScene);
+	stage.show();
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {

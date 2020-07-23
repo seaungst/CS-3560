@@ -41,7 +41,7 @@
          <Font name="Sathu" size="18.0" />
       </font>
    </Button>
-   <Button layoutX="35.0" layoutY="554.0" mnemonicParsing="false" onAction="#changeOrderDetails" prefHeight="57.0" prefWidth="171.0" stylesheets="@styleSheet.css" text="Order Details">
+   <Button layoutX="35.0" layoutY="554.0" mnemonicParsing="false" onAction="#changeOrderDetails" prefHeight="57.0" prefWidth="190.0" stylesheets="@styleSheet.css" text="Order Details">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
