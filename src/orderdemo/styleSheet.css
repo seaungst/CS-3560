@@ -85,14 +85,16 @@
     -fx-opacity: 1;
 }
 
-.table-row-cell:selected {
+.table-cell:selected
+{
     -fx-background-color: #FFAE4D;
-    -fx-background-insets: 0;
-    -fx-background-radius: 1;
+    -fx-border-color: #FFAE4D;
+    -fx-table-cell-border-color: #9D0400;
+    -fx-table-header-border-color: #9D0400;
 }
 
 .table-view:focused .table-row-cell:filled:focused:selected {
-    -fx-background-color: -fx-focus-color;
+    -fx-background-color: #FFAE4D;
 }
 
 .radio-button:selected 
@@ -128,7 +130,6 @@
     -fx-border-color: #9D0400;
     -fx-border-radius: 15px;
 }
-
 
 .progress-bar > .track 
 {
