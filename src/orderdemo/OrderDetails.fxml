@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orderdemo.OrderDetailController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="orderdemo.OrderDetailsController">
     
 <ImageView fitHeight="541.0" fitWidth="800.0" layoutY="87.0" opacity="0.3">
          <image>
@@ -19,7 +19,7 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9d0400" height="146.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
-      <Text fill="#ffae4d" layoutX="241.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Detail" wrappingWidth="414.13671875">
+      <Text fill="#ffae4d" layoutX="241.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Details" wrappingWidth="414.13671875">
          <font>
             <Font name="Sathu" size="61.0" />
          </font>
@@ -29,19 +29,19 @@
             <Image url="@assets/Img/icon.png" />
          </image>
       </ImageView>
-   <TableView layoutX="35.0" layoutY="173.0" prefHeight="345.0" prefWidth="730.0" stylesheets="@styleSheet.css">
+   <TableView fx:id="orderdetails" layoutX="35.0" layoutY="173.0" prefHeight="345.0" prefWidth="730.0" stylesheets="@styleSheet.css">
      <columns>
-       <TableColumn prefWidth="261.485107421875" text="Item" />
-       <TableColumn prefWidth="101.514892578125" text="Price" />
-         <TableColumn prefWidth="150.0" text="Quantity" />
+       <TableColumn fx:id="item" prefWidth="261.485107421875" text="Item" />
+       <TableColumn fx:id="price" prefWidth="101.514892578125" text="Price" />
+         <TableColumn fx:id="quantity" prefWidth="150.0" text="Quantity" />
      </columns>
    </TableView>
-   <Button layoutX="638.0" layoutY="554.0" mnemonicParsing="false" onAction="#changeManageAccount" prefHeight="56.0" prefWidth="127.0" stylesheets="@styleSheet.css" text="Back">
+   <Button layoutX="638.0" layoutY="554.0" mnemonicParsing="false" onAction="#changeManageAccount" prefHeight="56.0" prefWidth="127.0" stylesheets="@styleSheet.css" text="Home">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
    </Button>
-   <ProgressBar layoutX="35.0" layoutY="549.0" prefHeight="33.0" prefWidth="560.0" progress="0.0" />
+   <ProgressBar layoutX="35.0" layoutY="549.0" prefHeight="33.0" prefWidth="395.0" progress="0.0" stylesheets="@styleSheet.css" />
    <Text fill="#9d0400" layoutX="35.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Progress:">
       <font>
          <Font name="Sathu" size="18.0" />
@@ -52,14 +52,19 @@
          <Font name="Sathu" size="18.0" />
       </font>
    </Text>
-   <Text fill="#9d0400" layoutX="506.0" layoutY="598.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivered">
+   <Text fill="#9d0400" layoutX="357.0" layoutY="597.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivered">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
    </Text>
-   <Text fill="#9d0400" layoutX="285.0" layoutY="598.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shipped">
+   <Text fill="#9d0400" layoutX="201.0" layoutY="597.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shipped">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
    </Text>
+   <Button layoutX="482.0" layoutY="554.0" mnemonicParsing="false" onAction="#changeYourOrders" prefHeight="56.0" prefWidth="127.0" stylesheets="@styleSheet.css" text="Back">
+      <font>
+         <Font name="Sathu" size="18.0" />
+      </font>
+   </Button>
 </AnchorPane>
