@@ -93,13 +93,6 @@
     -fx-table-header-border-color: #9D0400;
 }
 
-.table-row-cell:selected {
-    -fx-background-color: #FFAE4D;
-    -fx-border-color: #FFAE4D;
-    -fx-table-cell-border-color: #9D0400;
-    -fx-table-header-border-color: #9D0400;
-}
-
 .table-view:focused .table-row-cell:filled:focused:selected {
     -fx-background-color: #FFAE4D;
 }
