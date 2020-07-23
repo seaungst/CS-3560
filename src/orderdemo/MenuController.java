@@ -30,7 +30,7 @@ import javafx.stage.Stage;
 
 
 public class MenuController implements Initializable {
-    UserInfo user;
+    public UserInfo user;
     public TableView<ModelTable> menu;
     public TableView<ModelTable> cart;
     public TableColumn<ModelTable, String> citem;

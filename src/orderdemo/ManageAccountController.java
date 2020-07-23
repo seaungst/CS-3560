@@ -24,9 +24,11 @@ import javafx.stage.Stage;
  */
 public class ManageAccountController implements Initializable {
     public Label fname,lname,address,phone;
+    public String userid;
     public UserInfo user;
     public void init(UserInfo temp){
         user = temp;
+	userid = String.valueOf(user.getId());
         fname.setText(temp.getFname());
         lname.setText(temp.getLname());
         address.setText(temp.getAddress());
@@ -58,10 +60,14 @@ public class ManageAccountController implements Initializable {
 	stage.setScene(createAccountScene);
 	stage.show();
     }
-    public void changeAllOrderView(ActionEvent event) throws IOException {
-	Parent createAccountParent = FXMLLoader.load(getClass().getResource("AllOrderView.fxml"));
+    public void changeYourOrders(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("YourOrders.fxml"));
+        Parent createAccountParent = loader.load();
 	Scene createAccountScene = new Scene(createAccountParent);
 
+        YourOrdersController controller = loader.getController();
+        controller.init(userid,user);
 	// This line gets the Stage information
 	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 	stage.setScene(createAccountScene);

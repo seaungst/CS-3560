@@ -128,3 +128,15 @@
     -fx-border-color: #9D0400;
     -fx-border-radius: 15px;
 }
+
+
+.progress-bar > .track 
+{
+  -fx-text-box-border: #9D0400;
+  -fx-control-inner-background: #fff3e7;
+}
+
+.progress-bar .bar 
+{
+    -fx-background-color: #FFAE4D;
+}
