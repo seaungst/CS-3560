@@ -20,7 +20,7 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9d0400" height="146.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
-      <Text fill="#ffae4d" layoutX="254.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout" wrappingWidth="317.13671875">
+      <Text fill="#ffae4d" layoutX="302.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout" wrappingWidth="317.13671875">
          <font>
             <Font name="Sathu" size="61.0" />
          </font>
@@ -32,8 +32,9 @@
       </ImageView>
    <TableView fx:id="cart" layoutX="28.0" layoutY="189.0" prefHeight="235.0" prefWidth="364.0" stylesheets="@styleSheet.css">
      <columns>
-       <TableColumn fx:id="cprice" prefWidth="101.514892578125" text="Price" />
-       <TableColumn fx:id="citem" prefWidth="261.485107421875" text="Item" />
+       <TableColumn fx:id="citem" prefWidth="184.05076599121094" text="Item" />
+       <TableColumn fx:id="cprice" prefWidth="95.94918823242188" text="Price" />
+         <TableColumn fx:id="cquantity" prefWidth="77.35760498046875" text="Qty." />
      </columns>
    </TableView>
    <Label fx:id="stax" layoutX="600.0" layoutY="269.0" text="\$00.00" textFill="#680100">
@@ -66,7 +67,7 @@
          <Font name="Sathu" size="36.0" />
       </font>
    </Text>
-   <Button layoutX="431.0" layoutY="528.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="57.0" prefWidth="200.0" stylesheets="@styleSheet.css" text="Place Order">
+   <Button layoutX="424.0" layoutY="528.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="57.0" prefWidth="171.0" stylesheets="@styleSheet.css" text="Place Order">
       <font>
          <Font name="Sathu" size="18.0" />
       </font>
@@ -98,7 +99,7 @@
    </Text>
    <RadioButton fx:id="radio1" layoutX="30.0" layoutY="556.0" mnemonicParsing="false" stylesheets="@styleSheet.css" text="Card" textFill="#680100" toggleGroup="$group1">
       <font>
-         <Font name="Sathu" size="18.0" />
+         <Font name="Sathu" size="20.0" />
       </font>
       <toggleGroup>
          <ToggleGroup fx:id="group1" />
@@ -106,7 +107,12 @@
    </RadioButton>
    <RadioButton fx:id="radio2" layoutX="142.0" layoutY="556.0" mnemonicParsing="false" stylesheets="@styleSheet.css" text="Cash" textFill="#680100" toggleGroup="$group1">
       <font>
-         <Font name="Sathu" size="18.0" />
+         <Font name="Sathu" size="20.0" />
       </font>
    </RadioButton>
+   <Button layoutX="623.0" layoutY="528.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="57.0" prefWidth="158.0" stylesheets="@styleSheet.css" text="Back">
+      <font>
+         <Font name="Sathu" size="18.0" />
+      </font>
+   </Button>
 </AnchorPane>

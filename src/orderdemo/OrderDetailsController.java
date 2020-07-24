@@ -21,6 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -33,6 +34,8 @@ import javafx.stage.Stage;
  */
 public class OrderDetailsController implements Initializable {
     public UserInfo user;
+    public int orderstatus;
+    public ProgressBar progressbar;
     public TableView<OrderDetailsTable> orderdetails;
     public TableColumn<OrderDetailsTable, String> item;
     public TableColumn<OrderDetailsTable, String> price;
@@ -66,8 +69,15 @@ public class OrderDetailsController implements Initializable {
 	stage.setScene(createAccountScene);
 	stage.show();
     }
-    public void init(String temp,UserInfo temp1){
+    public void init(String temp,String temp2,UserInfo temp1){
 	user = temp1;
+	if(temp2.equals("Shipped")){
+		progressbar.setProgress(0.5);
+	}else if(temp2.equals("Delivered")){
+		progressbar.setProgress(1);
+	}else{
+		progressbar.setProgress(0.1);
+	}
     	try {
             ConnectionClass connectionClass = new ConnectionClass();
             Connection connection = connectionClass.getConnection();

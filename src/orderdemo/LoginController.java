@@ -44,7 +44,7 @@ public class LoginController implements Initializable {
                 user = new UserInfo(result.getInt(1),result.getString(2),result.getString(3),result.getString(4),result.getString(5));
                 changeManageAccount(actionEvent);
             } else {
-                isConnected.setText("Not Connected");
+                isConnected.setVisible(true);
             }
 
         } catch (SQLException e) {
@@ -77,7 +77,7 @@ public class LoginController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        isConnected.setVisible(false);
     }    
     
 }

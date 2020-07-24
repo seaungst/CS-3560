@@ -46,9 +46,7 @@ public class CreateAccountController implements Initializable {
 		statement.executeUpdate(sql);
 		changeWelcome(actionEvent);
 	}else{
-		System.out.print("input is invalid");
 		input.setVisible(true);
-		input.setText("input is invalid");
 
 	}
     }

@@ -8,7 +8,7 @@ public Connection connection;
     public  Connection getConnection(){
 
 
-        String dbName="database";
+        String dbName="databasenew";
         String userName="root";
         String password="";
 
