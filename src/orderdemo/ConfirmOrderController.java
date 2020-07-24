@@ -106,6 +106,19 @@ public class ConfirmOrderController implements Initializable {
 	stage.setScene(createAccountScene);
 	stage.show();
     }
+    public void changeMenu(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Menu.fxml"));
+        Parent createAccountParent = loader.load();
+	Scene createAccountScene = new Scene(createAccountParent);
+
+        MenuController controller = loader.getController();
+        controller.getUser(user);
+	// This line gets the Stage information
+	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+	stage.setScene(createAccountScene);
+	stage.show();
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
