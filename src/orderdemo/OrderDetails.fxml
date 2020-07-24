@@ -19,7 +19,7 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9d0400" height="146.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
-      <Text fill="#ffae4d" layoutX="241.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Details" wrappingWidth="414.13671875">
+      <Text fill="#ffae4d" layoutX="264.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Details" wrappingWidth="414.13671875">
          <font>
             <Font name="Sathu" size="61.0" />
          </font>
