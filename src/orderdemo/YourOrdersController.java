@@ -35,6 +35,7 @@ import javafx.stage.Stage;
  */
 public class YourOrdersController implements Initializable {
     public UserInfo user;
+    public String orderstatus;
     public TableView<OrderTable> orderview;
     public TableColumn<OrderTable, String> number;
     public TableColumn<OrderTable, String> date;
@@ -67,7 +68,7 @@ public class YourOrdersController implements Initializable {
 	    Scene createAccountScene = new Scene(createAccountParent);
 
 	    OrderDetailsController controller = loader.getController();
-	    controller.init(orderid,user);
+	    controller.init(orderid,orderstatus,user);
 	    // This line gets the Stage information
 	    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	    stage.setScene(createAccountScene);
@@ -80,10 +81,11 @@ public class YourOrdersController implements Initializable {
 	// Item here is the table view type:
 	OrderTable item = orderview.getItems().get(row);
 
-	TableColumn col = pos.getTableColumn();
 	// this gives the value in the selected cell:
-	orderid = String.valueOf(col.getCellObservableValue(item).getValue());
+	orderid = String.valueOf(item.getOrderNumber());
 	System.out.println(orderid);
+	orderstatus = String.valueOf(item.getOrderStatus());
+	System.out.println(orderstatus);
     }
     public void init(String temp,UserInfo temp1){
 	user = temp1;

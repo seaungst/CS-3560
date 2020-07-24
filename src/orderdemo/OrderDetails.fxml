@@ -41,7 +41,7 @@
          <Font name="Sathu" size="18.0" />
       </font>
    </Button>
-   <ProgressBar layoutX="35.0" layoutY="549.0" prefHeight="33.0" prefWidth="685.0" progress="0.0" stylesheets="@styleSheet.css" />
+   <ProgressBar fx:id="progressbar" layoutX="35.0" layoutY="549.0" prefHeight="33.0" prefWidth="685.0" progress="0.0" stylesheets="@styleSheet.css" />
    <Text fill="#9d0400" layoutX="35.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Progress:">
       <font>
          <Font name="Sathu" size="18.0" />
