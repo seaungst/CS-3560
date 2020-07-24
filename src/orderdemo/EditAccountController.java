@@ -74,9 +74,7 @@ public class EditAccountController implements Initializable {
 			e.printStackTrace();
 		}
 	}else{
-		System.out.print("input is invalid");
 		input.setVisible(true);
-		input.setText("input is invalid");
 
 	}
     }

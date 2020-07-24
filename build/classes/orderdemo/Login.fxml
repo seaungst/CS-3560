@@ -44,9 +44,9 @@
             <Font name="Sathu" size="18.0" />
          </font>
       </TextField>
-      <Label fx:id="isConnected" layoutX="265.0" layoutY="400.0" prefHeight="17.0" prefWidth="301.0" textFill="#e10a0a">
+      <Label fx:id="isConnected" layoutX="265.0" layoutY="405.0" prefHeight="17.0" prefWidth="301.0" text="INVALID INPUT. Please try again. " textFill="#e40400">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Label>
       <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="163.0" layoutY="340.0">

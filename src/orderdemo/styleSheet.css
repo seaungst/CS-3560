@@ -96,7 +96,7 @@
 .table-row-cell:selected
 {
     -fx-background-color: #FFAE4D;
-    -fx-border-color: #FFAE4D;
+    /*-fx-border-color: #FFAE4D;*/
 }
 
 .radio-button:selected 
