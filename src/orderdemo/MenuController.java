@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -39,16 +41,21 @@ public class MenuController implements Initializable {
     public TableColumn<ModelTable, String> price;
     public Label sstotal,stax,stotal;
     public double subtotal;
+    public ObservableList<OrderedFood> oblist2 = FXCollections.observableArrayList();
     public ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
     public ObservableList<ModelTable> oblist1 = FXCollections.observableArrayList();
     public void changeConfirmOrder(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
+        update();
+	oblist1.forEach(item -> {
+            subtotal += item.getUnit_price();
+        });
+	FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("ConfirmOrder.fxml"));
         Parent createAccountParent = loader.load();
 	Scene createAccountScene = new Scene(createAccountParent);
 
         ConfirmOrderController controller = loader.getController();
-        controller.init(oblist1, user);
+        controller.init(oblist2, user,subtotal);
 	// This line gets the Stage information
 	Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 	stage.setScene(createAccountScene);
@@ -74,6 +81,23 @@ public class MenuController implements Initializable {
     }
     public void getUser(UserInfo temp){
         user = temp;
+    }
+    public void update(){
+
+        HashMap<String, Integer> freqMap = new HashMap<String, Integer>(); 
+        for (int i=0;i<oblist1.size();i++) { 
+	    String temp = String.valueOf(oblist1.get(i).foodid) +"@"+ oblist1.get(i).name +"@"+ String.valueOf(oblist1.get(i).unit_price);
+            if (freqMap.containsKey(temp)) { 
+                freqMap.put(temp, freqMap.get(temp) + 1); 
+            } 
+            else { 
+                freqMap.put(temp, 1); 
+            } 
+        }  
+	for (String i : freqMap.keySet()) {
+		String[] splitStr = i.split("@");
+		oblist2.add(new OrderedFood(splitStr[0],splitStr[1],splitStr[2],freqMap.get(i)));
+	}
     }
     public void cost(){
         oblist1.forEach(item -> {

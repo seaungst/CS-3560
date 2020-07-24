@@ -33,7 +33,8 @@
    <TableView fx:id="cart" layoutX="28.0" layoutY="189.0" prefHeight="235.0" prefWidth="364.0" stylesheets="@styleSheet.css">
      <columns>
        <TableColumn fx:id="cprice" prefWidth="101.514892578125" text="Price" />
-       <TableColumn fx:id="citem" prefWidth="261.485107421875" text="Item" />
+       <TableColumn fx:id="citem" prefWidth="105.0" text="Item" />
+         <TableColumn fx:id="cquantity" prefWidth="105.0" text="Quantity" />
      </columns>
    </TableView>
    <Label fx:id="stax" layoutX="600.0" layoutY="269.0" text="\$00.00" textFill="#680100">
