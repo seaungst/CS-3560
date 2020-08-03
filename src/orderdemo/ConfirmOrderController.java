@@ -71,7 +71,7 @@ public class ConfirmOrderController implements Initializable {
 	try {
 		ConnectionClass connectionClass = new ConnectionClass();
 		Connection connection = connectionClass.getConnection();
-		String sql1 = "INSERT INTO orders(customer_id,date) VALUES(" + String.valueOf(user.getId()) + ",'2019-12-01');";
+		String sql1 = "INSERT INTO orders(customer_id,date) VALUES(" + String.valueOf(user.getId()) + ",'2020-07-29');";
 		String sql2 = "INSERT INTO payments(order_id,amount,payment_method) VALUES(LAST_INSERT_ID(),"+ String.valueOf(totalAmount)+","+ paymethod+");";
 		connection.createStatement().executeUpdate(sql1);
 		
