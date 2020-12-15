@@ -15,6 +15,7 @@ the program.
 
 I was able to run the program on Netbeans IDE 8.2 with Netbeans Connector J and Xampp with 
 phpMyAdmin for the program and database. The new database created should be named "databasenew" 
-for proper connection. 
+for proper connection, and lines from "CREATE TABLE `customers`" to the end of the file should 
+be copied and pasted to create the database.
 
 Thank you!
