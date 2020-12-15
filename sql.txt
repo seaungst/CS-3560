@@ -1,0 +1,151 @@
+---------------------------------------------------------------
+SQL command
+---------------------------------------------------------------
+***************************************************************
+Place Order
+***************************************************************
+INSERT INTO orders(customer_id,date) VALUES(5,'2019-12-01');
+INSERT INTO order_items(order_id,food_id,unit_price) VALUES(LAST_INSERT_ID(),2,4.5),(LAST_INSERT_ID(),4,4.5);
+INSERT INTO payments(order_id,amount) VALUES(LAST_INSERT_ID(),100);
+
+***************************************************************
+All orders
+***************************************************************
+SELECT orders.order_id,date,order_statuses.name,payment_methods.type,amount 
+FROM orders 
+JOIN payments ON orders.order_id = payments.order_id 
+JOIN order_statuses ON orders.status = order_statuses.order_status_id 
+JOIN payment_methods ON payment_methods.payment_method_id = payments.payment_method 
+WHERE customer_id = 5;
+***************************************************************
+order detail
+***************************************************************
+SELECT name, order_items.unit_price,quantity 
+FROM order_items 
+JOIN foods ON order_items.food_id = foods.food_id 
+WHERE order_items.order_id = 6;
+
+---------------------------------------------------------------
+INSERT 
+USE `database`;
+SET NAMES utf8 ;
+SET character_set_client = utf8mb4 ;
+
+customer(customer_id,fname,lname,address,phone) 5
+payments(payment_id,order_id,amount,payment_method) 4
+payment_methods(payment_method_id,name) 2
+foods(food_id,name,unit_price) 3
+orders(order_id,customer_id,date,status) 4
+order_statuses(order_status_id,name) 2
+order_items(order_id,food_id,quantity,unit_price)
+
+CREATE TABLE `customers` (
+  `customer_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`customer_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `customers` VALUES (1,'Catherine','Vinte','3 Nevada Parkway Syracuse NY','3152527305');
+INSERT INTO `customers` VALUES (2,'John','Smith','34267 Glendale Pkwy Huntington WV','3046591170');
+INSERT INTO `customers` VALUES (3,'Jane','Doe','096 Pawling Parkway San Francisco CA','4151446037');
+INSERT INTO `customers` VALUES (4,'Jimmy','John','81674 Westerfield Circle Waco TX','2547500784');
+INSERT INTO `customers` VALUES (5,'Vincent','Martin','0863 Farmco Road Portland OR','9718889129');
+
+CREATE TABLE `foods` (
+  `food_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `unit_price` decimal(4,2) NOT NULL,
+  PRIMARY KEY (`food_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `foods`(name,unit_price) VALUES ('Double Cheeseburger',3.95);
+INSERT INTO `foods`(name,unit_price) VALUES ('Cheeseburger',2.75);
+INSERT INTO `foods`(name,unit_price) VALUES ('Double Hamburger',3.65);
+INSERT INTO `foods`(name,unit_price) VALUES ('Hamburger',2.45);
+INSERT INTO `foods`(name,unit_price) VALUES ('French Fries - Plain',1.85);
+INSERT INTO `foods`(name,unit_price) VALUES ('French Fries - Cheese',2.15);
+INSERT INTO `foods`(name,unit_price) VALUES ('Milkshake - Strawberry',2.50);
+INSERT INTO `foods`(name,unit_price) VALUES ('Milkshake - Vanilla',2.50);
+INSERT INTO `foods`(name,unit_price) VALUES ('Milkshake - Chocolate',2.50);
+INSERT INTO `foods`(name,unit_price) VALUES ('Soft Drink - Small',1.65);
+INSERT INTO `foods`(name,unit_price) VALUES ('Soft Drink - Medium',1.80);
+INSERT INTO `foods`(name,unit_price) VALUES ('Soft Drink - Large',2.00);
+INSERT INTO `foods`(name,unit_price) VALUES ('Coffee',1.35);
+INSERT INTO `foods`(name,unit_price) VALUES ('Hot Cocoa',1.80);
+INSERT INTO `foods`(name,unit_price) VALUES ('Milk',0.99);
+
+CREATE TABLE `payment_methods` (
+  `payment_method_id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `type` varchar(50) NOT NULL,
+  PRIMARY KEY (`payment_method_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `payment_methods` VALUES (1,'Credit Card');
+INSERT INTO `payment_methods` VALUES (2,'Cash');
+
+CREATE TABLE `order_statuses` (
+  `order_status_id` tinyint(4) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`order_status_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `order_statuses` VALUES (1,'Processed');
+INSERT INTO `order_statuses` VALUES (2,'Shipped');
+INSERT INTO `order_statuses` VALUES (3,'Delivered');
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `date` date NOT NULL DEFAULT '2012-07-29',
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`order_id`),
+  KEY `fk_orders_customers_idx` (`customer_id`),
+  KEY `fk_orders_order_statuses_idx` (`status`),
+  CONSTRAINT `fk_orders_customers` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_orders_order_statuses` FOREIGN KEY (`status`) REFERENCES `order_statuses` (`order_status_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `orders` VALUES (1,1,'2019-01-30',1);
+INSERT INTO `orders` VALUES (2,2,'2018-08-02',1);
+INSERT INTO `orders` VALUES (3,3,'2017-12-01',1);
+INSERT INTO `orders` VALUES (4,4,'2017-01-22',1);
+INSERT INTO `orders` VALUES (5,2,'2017-08-25',1);
+INSERT INTO `orders` VALUES (6,1,'2018-11-18',1);
+
+CREATE TABLE `payments` (
+  `payment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `amount` decimal(9,2) NOT NULL,
+  `payment_method` tinyint(4) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`payment_id`),
+  KEY `fk_client_id_idx` (`order_id`),
+  CONSTRAINT `fk_payment_client` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `payments` VALUES (1,1,8.18,1);
+INSERT INTO `payments` VALUES (2,2,74.55,1);
+INSERT INTO `payments` VALUES (3,3,0.03,1);
+INSERT INTO `payments` VALUES (4,4,87.44,1);
+INSERT INTO `payments` VALUES (5,5,80.31,1);
+INSERT INTO `payments` VALUES (6,6,68.10,1);
+
+
+CREATE TABLE `order_items` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `food_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `unit_price` decimal(4,2) NOT NULL,
+  PRIMARY KEY (`order_id`,`food_id`),
+  KEY `fk_order_items_food_idx` (`food_id`),
+  CONSTRAINT `fk_order_items_orders` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_order_items_products` FOREIGN KEY (`food_id`) REFERENCES `foods` (`food_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `order_items` VALUES (1,4,4,3.74);
+INSERT INTO `order_items` VALUES (2,1,2,9.10);
+INSERT INTO `order_items` VALUES (2,4,4,1.66);
+INSERT INTO `order_items` VALUES (2,6,2,2.94);
+INSERT INTO `order_items` VALUES (3,3,10,9.12);
+INSERT INTO `order_items` VALUES (4,3,7,6.99);
+INSERT INTO `order_items` VALUES (4,10,7,6.40);
+INSERT INTO `order_items` VALUES (5,2,3,9.89);
+INSERT INTO `order_items` VALUES (6,1,4,8.65);
+INSERT INTO `order_items` VALUES (6,2,4,3.28);
+INSERT INTO `order_items` VALUES (6,3,4,7.46);
+INSERT INTO `order_items` VALUES (6,5,1,3.45);
