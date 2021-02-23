@@ -23,12 +23,12 @@ for proper connection, and lines from "CREATE TABLE 'customers'" to the end of t
 be copied and pasted to create the database.
 
 ## Screenshots
-![Welcome Page](../Screenshots/Out-N-In_Welcome_Page.png?raw=true "Welcome Page")
+![Welcome Page](https://github.com/seaungst/CS-3560/blob/master/Screenshots/Out-N-In%20Welcome%20Page.png?raw=true "Welcome Page")
 <br>
-![Create Account Page](../Screenshots/Out-N-In_Create_Account_Page.png?raw=true "Create Account Page")
+![Create Account Page](https://github.com/seaungst/CS-3560/blob/master/Screenshots/Out-N-In%20Create%20Account%20Page.png?raw=true "Create Account Page")
 <br>
-![Login Page](../Screenshots/Out-N-In_Login_Page.png?raw=true "Login Page")
+![Login Page](https://github.com/seaungst/CS-3560/blob/master/Screenshots/Out-N-In%20Login%20Page.png?raw=true "Login Page")
 <br>
-![Menu Cart Page](../Screenshots/Out-N-In_Menu_Cart_Page.png?raw=true "Menu Cart Page")
+![Menu Cart Page](https://github.com/seaungst/CS-3560/blob/master/Screenshots/Out-N-In%20Menu%20Cart%20Page.png?raw=true "Menu Cart Page")
 <br>
-![Order Page](../Screenshots/Out-N-In_Order_Page.png?raw=true "Order Page")
+![Order Page](https://github.com/seaungst/CS-3560/blob/master/Screenshots/Out-N-In%20Order%20Page.png?raw=true "Order Page")
