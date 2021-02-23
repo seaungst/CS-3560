@@ -23,12 +23,12 @@ for proper connection, and lines from "CREATE TABLE 'customers'" to the end of t
 be copied and pasted to create the database.
 
 ## Screenshots
-![Welcome Page](/Screenshots/Out-N-In_Welcome_Page.png?raw=true "Welcome Page")
+![Welcome Page](../Screenshots/Out-N-In_Welcome_Page.png?raw=true "Welcome Page")
 <br>
-![Create Account Page](/Screenshots/Out-N-In_Create_Account_Page.png?raw=true "Create Account Page")
+![Create Account Page](../Screenshots/Out-N-In_Create_Account_Page.png?raw=true "Create Account Page")
 <br>
-![Login Page](/Screenshots/Out-N-In_Login_Page.png?raw=true "Login Page")
+![Login Page](../Screenshots/Out-N-In_Login_Page.png?raw=true "Login Page")
 <br>
-![Menu Cart Page](/Screenshots/Out-N-In_Menu_Cart_Page.png?raw=true "Menu Cart Page")
+![Menu Cart Page](../Screenshots/Out-N-In_Menu_Cart_Page.png?raw=true "Menu Cart Page")
 <br>
-![Order Page](/Screenshots/Out-N-In_Order_Page.png?raw=true "Order Page")
+![Order Page](../Screenshots/Out-N-In_Order_Page.png?raw=true "Order Page")
